@@ -1,0 +1,135 @@
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{environ}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage[a4paper]{geometry} 
+\geometry{top=25mm,left=25mm ,right=25mm, bottom=3cm} 
+%
+% =======================
+% Abbildungstext anpassen
+% =======================
+\usepackage[normal,font={small}, labelfont=bf,figurename=Abb.]{caption}
+%
+% Pfad der Abbildungen
+\graphicspath{ {../figures/} }
+%
+\setlength{\footheight}{50mm}
+\ifoot{\footnotesize  Letzte Änderung: \today}
+\ofoot{Seite Nr. \luecke{1cm}}
+\ohead{Datum:\hspace*{3cm}}
+%
+% ----------
+% ÜBERSHRIFT
+% ----------
+\newcommand{\Ueberschrift}[2]{
+	\vskip 1.em
+	\setlength{\tabcolsep}{0mm} % kein Innenrand bei Spaleten
+	\begin{tabularx}{\linewidth}{lXr}
+	{\Large\textbf{\textsf{#1}}} & &
+	\includegraphics[height=1.5cm]{#2}\\ % Logo rechtsbündig
+	\hline
+	\end{tabularx}
+	% Spaltenabstand zurücksetzen
+	\setlength{\tabcolsep}{6pt} 
+}
+% ----------
+% HINWEISBOX
+% ----------
+\NewEnviron{hinweisbox}[2]{%
+\par
+\vspace{1em}
+\noindent
+\begin{tikzpicture}[]
+	\node[rectangle,minimum width=1.0\textwidth, inner sep=0pt] (m) {
+		\begin{minipage}{\textwidth}
+			\dimen0\linewidth
+			\advance\dimen0 by -3.0em
+    			\vskip .8em \hspace{1em}
+    			\parbox{\the\dimen0}{
+        			\BODY\vskip .5em}%			
+		\end{minipage}
+		};
+	\draw[#2, very thick, rounded corners, color=#1] (m.south west) rectangle (m.north east);
+\end{tikzpicture}
+}
+% ----------
+% MERKE
+% ----------
+\NewEnviron{merke}{%
+\par
+\vspace{1em}
+\noindent
+\begin{tikzpicture}
+	\node[rectangle,minimum width=1.0\textwidth, inner sep=0pt] (m) {
+		\begin{minipage}{\textwidth}
+			\dimen0\linewidth
+			\advance\dimen0 by -3.0em
+    			\vskip .8em \hspace{1em}
+    			\parbox{\the\dimen0}{
+        		\textbf{Merke:}	\BODY\vskip .5em}%			
+		\end{minipage}
+		};
+	\draw[dotted, very thick, rounded corners, color=red] (m.south west) rectangle (m.north east);
+\end{tikzpicture}
+}
+%
+\newcommand{\Quelle}[1]{
+	\ifoot{\footnotesize #1 \newline Letzte Änderung: \today }
+}
+%
+% ----------
+% Schwierigkeitsindikatoren
+% ----------
+\newcommand{\indikator}[1]{
+	\begin{tikzpicture}[]
+		\draw[green!50!black] circle (1.5mm);	
+		\filldraw[fill=green!20!white, draw=green!50!black]
+		(0,0) -- (1.5mm,0mm) arc (0: #1 :1.5mm) -- (0,0);	
+	\end{tikzpicture}
+}
+%
+\newcommand{\schwer}{
+\begin{tikzpicture}[]
+	\filldraw[fill=green!20!white, draw=green!50!black] (0,0) circle (1.5mm);
+\end{tikzpicture}
+}
+\newcommand{\mittel}{
+	\indikator{180}
+}
+\newcommand{\leicht}{
+\begin{tikzpicture}[]
+	\draw[green!50!black] (0,0) circle (1.5mm);
+\end{tikzpicture}
+}
+% ----------
+% AUFGABENBOX
+% ----------
+\NewEnviron{aufgabenbox}[2]{%
+\par
+\vspace{1em}
+\noindent
+\begin{tikzpicture}[]
+	\node[rectangle,minimum width=1.0\textwidth, inner sep=0pt] (m) {
+		\begin{minipage}{\textwidth}
+			\dimen0\linewidth
+			\advance\dimen0 by -3.0em
+    			\vskip .8em \hspace{1em}
+    			\parbox{\the\dimen0}{
+        			\BODY\vskip .5em}%			
+		\end{minipage}
+		};
+	\draw[solid, thin, color=black] (m.south west) rectangle (m.north east);
+\end{tikzpicture}
+}
+% ----------
+% StickyNote
+% ----------
+\input{StickyNote}
+%
+% -----------
+% Schriftstil
+% -----------
+\renewcommand\familydefault{\sfdefault}
