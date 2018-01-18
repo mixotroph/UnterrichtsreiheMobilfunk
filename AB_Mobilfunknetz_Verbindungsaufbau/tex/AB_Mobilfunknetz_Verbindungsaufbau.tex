@@ -1,7 +1,7 @@
 \documentclass[loesung]{schulein}
 %
 \kopfDatum{\today} 
-\fach{NawI 9}
+\fach{}
 \dokName{Mobilfunknetz}
 \keineSeitenzahlen
 \input{ab_preamble}
@@ -15,19 +15,19 @@
 %\par
 %Der Kommunikationsaufbau im Mobilfunknetz 
 \begin{aufgaben}
-\item Lest die zusätzlichen Information zum VLR, \textbf{und} den Text zum Rufaufbau/Location Update. Recherchiert bei Unklarheiten zur Funktion im Internet. 
-\item Erstellt auf Grundlage der Texte und des Materials der letzten Stunden eine Präsentation, in der \textbf{möglichst anschaulich} der Verbindungsaufbau/das \textit{Location Update} dargestellt wird. Mit Hilfe dieser Präsentation sollt ihr in der nächsten Stunde euren Mitschülern, die heute an der Fortbildung teilnehmen, den Verbindungsaufbau/das \textit{Loaction Update} \textbf{beibringen}. Ihr schlüpft also in die Rolle des Lehrenden!
+\item Lesen Sie die zusätzlichen Information zum VLR \textbf{und} den Text zum Rufaufbau/Location Update. Recherchieren Sie bei Unklarheiten zur Funktion im Internet. 
+\item Erstellen Sie auf Grundlage der bereits behandelten Materialien eine Präsentation oder ein Erklärvideo, in der \textbf{möglichst anschaulich} der Verbindungsaufbau/das \textit{Location Update} dargestellt wird. Mit Hilfe dieser Präsentationen bzw. Videos sollen Sie anschließend Ihren Mitschülern den Verbindungsaufbau/das \textit{Loaction Update} \textbf{beibringen}. Sie schlüpfen also in die Rolle des Lehrenden!
 
 \end{aufgaben}
 %
 \subsection*{Visitor Location Register}
-Das Visitor Location Register (VLR, deutsch: \textit{Besucherortsregister}) ist eine Datenbank im Mobile-services Switching Centre (MSC, deutsch: \textit{Vermittlungsstelle in Mobilfunknetzen}). Hier sind die Informationen über alle Teilnehmer abgelegt, die sich gerade im Einzugsbereich des MSC befinden.
+Das Visitor Location Register (VLR, deutsch: \textit{Besucherortsregister}) ist eine Datenbank im Mobile-services Switching Center (MSC, deutsch: \textit{Vermittlungsstelle in Mobilfunknetzen}). Hier sind die Informationen über alle Teilnehmer abgelegt, die sich gerade im Einzugsbereich des MSC befinden.
 
 \subsection*{Rufaufbau}
-Ruft ein Mobilfunkteilnehmer (z.B. Sam) jemanden an, analysiert die Vermittlungszentrale (MSC) anhand der gewählten Rufnummer, um welchen Typ es sich beim angerufenen Teilnehmer handelt (Mobilteilnehmer des eigenen Netzes, Mobilteilnehmer eines fremden Netzes, Festnetzteilnehmer, Sonderrufnummer) und baut das Gespräch zu dem Teilnehmer wie folgt auf: 
+Ruft ein Mobilfunkteilnehmer jemanden an, analysiert die Vermittlungszentrale (MSC) anhand der gewählten Rufnummer, um welchen Typ es sich beim angerufenen Teilnehmer handelt (Mobilteilnehmer des eigenen Netzes, Mobilteilnehmer eines fremden Netzes, Festnetzteilnehmer, Sonderrufnummer) und baut das Gespräch zu dem Teilnehmer wie folgt auf: 
 \begin{itemize}
 \item Bei Festnetzteilnehmern und Sonderrufnummern wird das Gespräch ins Festnetz weitergeleitet.
-\item Bei Mobilfunkteilnehmern wird zuerst beim Heimat-HLR des angerufenen Teilnehmers nachgefragt, in welchem Netz und in welchem MSC-Bereich dieser sich gerade befindet. Die MSC lokalisiert nun, in welcher Location Area sich der Teilnehmer befindet und baut mit Hilfe der zugeordneten Funknetz-Elemente BSC und BTS das Gespräch zum Teilnehmer auf.
+\item Bei Mobilfunkteilnehmern wird zuerst beim Heimat-HLR des angerufenen Teilnehmers nachgefragt, in welchem Mobilfunknetz und in welchem MSC-Bereich sich dieser gerade befindet. Das MSC lokalisiert nun, in welcher Location Area sich der Teilnehmer befindet und baut mit Hilfe der zugeordneten Funknetz-Elemente BSC und BTS das Gespräch zum Teilnehmer auf.
 \end{itemize}
 	
 \subsection*{Location Update}

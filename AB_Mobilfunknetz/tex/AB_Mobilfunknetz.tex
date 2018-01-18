@@ -1,7 +1,7 @@
 \documentclass[loesung]{schulein}
 %
 \kopfDatum{\today} 
-\fach{NawI 9}
+\fach{}
 \dokName{Mobilfunknetz}
 \keineSeitenzahlen
 \input{ab_preamble}
@@ -10,39 +10,42 @@
 %\onehalfspace
 %
 \section*{Struktur und Funktion des Mobilfunknetzes}
-\Ueberschrift{Aufgaben}{pa}
+\Ueberschrift{Aufgaben}{ga}
 \begin{aufgaben}
-\item Teilt die Textabschnitte in der Gruppe auf und lest sie zunächst  einzeln in Ruhe durch. Markiert dabei die Textstellen, die über die Funktion des Bauteils informieren.  Erklärt  anschließend den anderen in der Gruppe  welche Funktion \glqq eure\grqq\ Komponente hat und zu welchen Komponenten sie in Verbindung steht. Klärt offene Fragen durch eine gezielte Recherche.
-\item Öffnet die Datei \texttt{Struktur-Puzzele.pptx} im \glqq Ausgeteilt-Ordner\grqq\ und löst das Struktur-Puzzle. Ordnet dabei die Bild- und Bezeichnungskarten den freien Stellen zu. Speichert das Dokument anschließend im \glqq  Eingesammelt-Ordner\grqq .
+\item Teilen Sie die Textabschnitte in der Gruppe auf und lesen Sie diese zunächst einzeln in Ruhe durch. Markieren Sie dabei die Textstellen, die über die Funktion des Bauteils informieren. Erklären Sie  anschließend ihren Gruppenmitgliedern welche Funktion \glqq ihre\grqq\ Komponente hat und zu welchen Komponenten sie in Verbindung steht. Klären Sie offene Fragen durch eine gezielte Recherche.
+\item Öffnet Sie die Datei \texttt{Struktur-Puzzele.pptx} und lösen Sie das Struktur-Puzzle. Ordnen Sie dabei die Bild- und Bezeichnungskarten den freien Stellen zu. 
+%Speichert das Dokument anschließend im \glqq  Eingesammelt-Ordner\grqq .
 
 \end{aufgaben}
 %
 \subsection*{Base-Transceiver-Station}
-Beim Mobiltelefonieren oder bei der Nutzung anderer Mobilfunkdienste nimmt dein Handy als erstes Kontakt mit einer Basisstation auf, die mit BTS (für Base-Transceiver-Station) abgekürzt wird. Bei UMTS-Netzen wird diese Basisstation als \glqq Node B\grqq\  bezeichnet. Basisstationen gibt es in verschiedenen \glqq Größen\grqq . Je enger die Funkzellen aufgebaut sind, desto näher stehen die Sender beieinander. In großen Gebäuden, etwa Bahnhöfen, Flughäfen oder Einkaufszentren aber auch an sehr belebten Orten können kleine Sender oder Repeater aufgestellt sein.
+Beim Mobiltelefonieren oder bei der Nutzung anderer Mobilfunkdienste nimmt dein Handy als erstes Kontakt mit einer Basisstation auf, die mit BTS (für Base-Transceiver-Station) abgekürzt wird. %Bei UMTS-Netzen wird diese Basisstation als \glqq Node B\grqq\  bezeichnet. 
+Basisstationen gibt es in verschiedenen \glqq Größen\grqq . Je enger die Funkzellen aufgebaut sind, desto näher stehen die Sender beieinander. In großen Gebäuden, etwa Bahnhöfen, Flughäfen oder Einkaufszentren aber auch an sehr belebten Orten können kleine Sender oder Repeater aufgestellt sein.
 
 %Der Sendemast einer Basisstation hat meistens mehrere Funkkanäle und jeder Funkkanal wird in Zeitschlitze eingeteilt. 
-Fällt eine Basisstation aus - etwa weil die Elektronik streikt oder der Strom wegbleibt - ist das ärgerlich, aber gerade in der Stadt kannst du noch einen Nachbarsender erreichen, der dann die Arbeit übernimmt. In ländlichen Regionen, wo einzelne Sender zum Teil mehrere Quadrat-Kilometer Fläche abdecken, ist hingegen oftmals keine Nachbarzelle erreichbar.
+Fällt eine Basisstation aus - etwa weil die Elektronik streikt oder der Strom wegbleibt - ist das ärgerlich, aber gerade in der Stadt kannst du noch einen Nachbarsender erreichen, der dann die Arbeit übernimmt. In ländlichen Regionen, ein denen einzelne Sender zum Teil mehrere Quadrat-Kilometer Fläche abdecken, ist hingegen oftmals keine Nachbarzelle erreichbar.
  
 Eine Funkzelle ist der Bereich, in dem das von einer Sendeeinrichtung eines Mobilfunknetzes gesendete Signal empfangen und fehlerfrei decodiert werden kann. Jede Funkzelle hat eine Cell-ID.
 
-\subsection*{Base-Station-Controller}
-An den Base-Station-Controller (BSC) sind mehrere Basisstationen (BTS, englisch „Base-Transceiver-Station“) angeschlossen. Die Verbindung zwischen einer Basisstation und dem übergeordneten Base-Station-Controller wird als A-bis-Link bezeichnet. %Meistens werden diese als 2-Mbit-PCM-Leitungen realisiert.
+\subsection*{Base-Station-Controller und Handover}
+An den Base-Station-Controller (BSC) sind mehrere Basisstationen (BTS, englisch „Base-Transceiver-Station“) angeschlossen. 
+%Die Verbindung zwischen einer Basisstation und dem übergeordneten Base-Station-Controller wird als A-bis-Link bezeichnet. %Meistens werden diese als 2-Mbit-PCM-Leitungen realisiert.
 
-Der Base-Station-Controller überwacht die Funkverbindungen im GSM-Netz und veranlasst gegebenenfalls Leistungsregelung (Power Control) und Zellwechsel (Handover). Wenn bei einem Handover die alte und neue Basisstation am selben Base-Station-Controller angebunden sind, führt der Controller den Handover selbstständig durch, ansonsten wird das übergeordnete MSC (Mobile-Switching-Center) involviert. Fällt der BSC aus, sind alle an ihn angeschlossenen Basisstationen offline. Das Gebiet ist aber in der Regel überschaubar.
+Als Handover (Zellwechsel) oder Verbindungsübergabe bezeichnet man einen Vorgang in einem mobilen Telekommunikationsnetz (zum Beispiel GSM oder UMTS), bei dem das mobile Endgerät (Mobilstation) während eines Gesprächs oder einer Datenverbindung ohne Unterbrechung dieser Verbindung von einer Funkzelle in eine andere wechselt.
 
-Als Handover oder Verbindungsübergabe bezeichnet man einen Vorgang in einem mobilen Telekommunikationsnetz (zum Beispiel GSM oder UMTS), bei dem das mobile Endgerät (Mobilstation) während eines Gesprächs oder einer Datenverbindung ohne Unterbrechung dieser Verbindung von einer Funkzelle in eine andere wechselt.
+Der Base-Station-Controller überwacht die Funkverbindungen im GSM-Netz und veranlasst gegebenenfalls Leistungsregelung (Power Control) und  Handover. Wenn bei einem Handover die alte und neue Basisstation am selben Base-Station-Controller angebunden sind, führt der Controller den Handover selbstständig durch, ansonsten wird das übergeordnete MSC (Mobile-Switching-Center) involviert. Fällt der BSC aus, sind alle an ihn angeschlossenen Basisstationen offline. Das Gebiet ist aber in der Regel überschaubar.
 
 \subsection*{Mobile-Switching-Center}
 Das Mobile-Switching-Center (MSC) ist eine volldigitale Vermittlungsstelle im Mobilfunknetz. 
 Jedem MSC ist ein bestimmter Anteil des Mobilfunknetzes mit allen Base-Station-Controller (BSC) und nachgeordneten Base-Transceiver-Stations (BTS) fest zugeordnet.
 
-Das MSC vermittelt die Gespräche netzintern zu anderen MSC oder aber übergibt sie an Gateway-MSC (GMSC), die die Schnittstellen zu anderen Mobilfunknetzen oder Festnetzanschlüssen im In- und Ausland haben. An dieser Stelle verlassen die Telefonate dann die Netze des jeweiligen Mobilfunkanbieters.
+Das MSC vermittelt die Gespräche und Nachrichten netzintern zu anderen MSC oder aber übergibt sie an Gateway-MSC (GMSC), die die Schnittstellen zu anderen Mobilfunknetzen oder Festnetzanschlüssen im In- und Ausland bereitstellen. An dieser Stelle verlassen Telefonate und Nachrichten dann das Netz des jeweiligen Mobilfunkanbieters. Hier befindet such auch eine Schnittstelle zum Internet.
 
-Für alle Verbindungen, die aus diesem Teil des Netzes kommen bzw. dorthin gehen, übernimmt das MSC die Anrufverwaltung, Ortsüberwachung und auch die Berechtigungsprüfung (Authentifizierung) der Mobilstation. Zusätzlich werden Gesprächsdaten für jedes Gespräch zur Gebührenabrechnung (Charging) aufgezeichnet. Diese Daten werden im VLR (Visitor-Location-Register) gespeichert, welches am MSC angegliedert ist.
+Für alle Verbindungen, die aus diesem Teil des Netzes kommen bzw. dorthin gehen, übernimmt das MSC die Anrufverwaltung, Standortfeststellung und auch die Berechtigungsprüfung (Authentifizierung) der Mobilstation. Zusätzlich werden Gesprächsdaten für jedes Gespräch zur Gebührenabrechnung (Charging) aufgezeichnet. Diese Daten werden im VLR (Visitor-Location-Register) gespeichert, welches am MSC angegliedert ist.
 
 \subsection*{Home-Location-Register und Visitor-Location-Register}
 Das Home Location Register (HLR) ist eine (verteilte) Datenbank und zentraler Bestandteil eines Mobilfunknetzes. Es gilt als Heimatregister einer Mobilfunknummer, wobei jede innerhalb eines Netzes registrierte Mobilstation und deren zugehörige Mobilfunknummer in der Datenbank gespeichert ist. 
-Das Visitor Location Register (VLR) ist eine  an das Mobile-Switching-Centre (MSC) angegliederte Datenbank. Hier sind die Informationen über alle Teilnehmer abgelegt, die sich gerade im Einzugsbereich des MSC befinden. Diese Daten werden aus dem HLR in das VLR kopiert.
+Das Visitor Location Register (VLR) ist eine  an das Mobile-Switching-Center (MSC) angegliederte Datenbank. Hier sind die Informationen über alle Teilnehmer abgelegt, die sich gerade im Einzugsbereich des MSC befinden. Diese Daten werden aus dem HLR in das VLR kopiert.
 Abgelegte Daten (zu jeder Mobilstation) im HLR und VLR:
 \begin{smallitemize}
 \item Semipermanente Daten
@@ -53,6 +56,12 @@ Abgelegte Daten (zu jeder Mobilstation) im HLR und VLR:
 \end{smallitemize}
 \item Temporäre Daten
 \begin{smallitemize}
+\item Location Area ID (LAI)
+\begin{itemize}
+\item Country Code (CC)
+\item Mobile Network Code (MNC)
+\item Location Area Code (LAC)
+\end{itemize} 
 \item Adresse des Visitor Location Registers (VLR)
 \item Adresse des Mobile-Switching-Centers (MSC)
 \item Authentication Set (Authentifizierungsset)
