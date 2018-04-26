@@ -1,0 +1,44 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{varwidth}
+\usepackage{schule}
+\usetikzlibrary{shapes}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+\footnotesize
+\begin{tikzpicture}[
+teilnehmer/.style={rectangle,draw,inner sep=6pt,fill=red!20},
+kommentar/.style={rectangle,draw,text width=6cm,inner sep=6pt,fill=yellow!20},
+vermittlung/.style={ellipse,align=center,draw,text width=4cm,inner sep=6pt,fill=blue!20},
+kante/.style={->, thick,-latex}
+]
+
+\node [teilnehmer](FN) at (0,0) {Festnetzanschluss};
+\node [vermittlung] (MSC) at (0,-2) {Vermittlung zur Vermittlungsstelle \textbf{MSC}};
+\node [kommentar](MSCC) at (0,-4) {\begin{varwidth}{\linewidth} Anfrage an die Heimatdatenbank (\textbf{HLR})
+	%\begin{smallitemize}
+    %    \item Heimatdatenbank (\textbf{HLR})
+    %    \item \textbf{AC} (\textbf{A}uthentication \textbf{R}egister)
+    %    \item \textbf{EIR} (\textbf{E}quipment \textbf{I}dentity \textbf{R}egister)
+    %\end{smallitemize}
+    nach der Teilnahmeberechtigung und dem Aufenthalt der mobilen Station.\end{varwidth}};
+\node [vermittlung](VER) at (0,-6) {Vermittlung zu der Ziel-MSC};
+\node[kommentar] (COM2) at (0,-8) {Abfrage der Besucherdatenbank (\textbf{VLR}), in welcher der Location Area's (Funkzellen) sich der Teilnehmer befindet.};
+\node [vermittlung](BSC) at (0,-10) {Vermittlung zum \textbf{BSC} der Location Area};
+\node [vermittlung](BST) at (0,-12.5) {Vermittlung zur Basisstation (\textbf{BTS}) der Funkzelle};
+\node[kommentar] (BSTCOM) at (0,-15) {Signalisiert das Teilnehmergerät Gesprächsbereitschaft, wird durch den BSC vom sog. Organisationskanal
+							auf den Gesprächskanal umgeschaltet.};
+\node [teilnehmer](MOBI) at (0,-17) {Mobilteilnehmer};						
+\path[kante] (FN) edge (MSC);	
+\path[kante] (MSC) edge (MSCC);	
+\path[kante] (MSCC) edge (VER);	
+\path[kante] (VER) edge (COM2);	
+\path[kante] (COM2) edge (BSC);	
+\path[kante] (BSC) edge (BST);	
+\path[kante] (BST) edge (BSTCOM);	
+\path[kante] (BSTCOM) edge (MOBI);	
+\end{tikzpicture}
+\end{document}
